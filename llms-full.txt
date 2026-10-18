@@ -1,0 +1,46 @@
+# regulatory-review-planner — 完整文本 / Full text
+
+本文件为 llms.txt 标准的「完整版」，供长上下文模型一次性读取本仓库的完整说明。
+
+## 这是什么
+
+`regulatory-review-planner` 是一个 Agent Skill，在 WorkBuddy 中对中文政策、制度、规章制度草稿做模型自主规划式合规审查。它借鉴旧审查接口的分层结构，但不机械跑全量审查项：先按文档类型与材料规划范围，再调用法宝版 MCP 核验关键事实，输出结构化审查备忘录。
+
+## 核心流程
+
+1. 读取与整理：识别文档类型、发文主体、适用对象/地域、审查目标；长文本先用 `scripts/split_articles.mjs` 拆条文。
+2. 规划审查范围：从 `references/review-taxonomy.md` 选审查层；先读工具/来源策略；执行最小必查集，再按触发线索加专项。
+3. 工具核验与分层执行：仅用已授权法宝版 MCP；未实际调用不写「已核验」；无法核验打 `[待核验]`。
+4. 合并问题并输出结构化备忘录（命中原文 + 判断 + 依据 + 来源标签 + 修改建议）。
+
+## 最小必查集
+
+制度要素完整性 / 制定依据与效力 / 权限边界 / 结构与内部一致性 / 执行可操作性 / 语言文字规范。
+
+## 专项触发
+
+个人信息保护 / 公平竞争与非歧视 / 劳动者权益（读 employment-review-precision.md）/ 名称时效 / 上级制度冲突。
+
+## 快速开始
+
+```bash
+git clone --depth 1 https://github.com/SynomosAI/regulatory-review-planner.git
+cd regulatory-review-planner
+node scripts/split_articles.mjs 你的制度.txt
+```
+
+## 触发词
+
+合规审查 / 制度审查 / 规章审查 / 合同管理办法审查 / 个人信息保护审查 / 劳动者权益审查 / 采购制度合规 / 评审规划 / regulatory review / compliance review。
+
+## 许可与权利
+
+MIT 许可。SKILL.md 权属：© 2026 注册老炮@MedXpert。完整条款见 `LICENSE.md`。
+
+## 边界
+
+审查结论仅供参考；企业主体状态、集团关系、行政处罚/涉诉不由法宝版 MCP 覆盖，标记「主体信息待人工核验」。不替代正式法律意见。
+
+## 链接
+
+- 仓库: https://github.com/SynomosAI/regulatory-review-planner

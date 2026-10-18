@@ -1,0 +1,22 @@
+# regulatory-review-planner
+
+> Agent Skill for model-planned compliance review of Chinese policy / regulation / internal-rule drafts: plans review scope, verifies facts via authorized pkulaw MCPs, and outputs a structured review memo with matched text, judgment, basis, source tags and revision suggestions.
+
+Part of the SynomosAI ecosystem. Runs inside WorkBuddy.
+
+## Core
+
+- [SKILL.md](https://github.com/SynomosAI/regulatory-review-planner/blob/main/SKILL.md): skill main file (YAML frontmatter + full method)
+- [references/review-taxonomy.md](https://github.com/SynomosAI/regulatory-review-planner/blob/main/references/review-taxonomy.md): review layers and items
+- [references/tool-integration-policy.md](https://github.com/SynomosAI/regulatory-review-planner/blob/main/references/tool-integration-policy.md): MCP policy
+- [scripts/split_articles.mjs](https://github.com/SynomosAI/regulatory-review-planner/blob/main/scripts/split_articles.mjs): article splitter
+- [README.md](https://github.com/SynomosAI/regulatory-review-planner/blob/main/README.md): Chinese overview
+- [LICENSE.md](https://github.com/SynomosAI/regulatory-review-planner/blob/main/LICENSE.md): MIT
+
+## Optional
+
+- [README.en.md](https://github.com/SynomosAI/regulatory-review-planner/blob/main/README.en.md): English overview
+- [AGENTS.md](https://github.com/SynomosAI/regulatory-review-planner/blob/main/AGENTS.md): guidance for AI agents
+- [llms-full.txt](https://github.com/SynomosAI/regulatory-review-planner/blob/main/llms-full.txt): full text
+- [SECURITY.md](https://github.com/SynomosAI/regulatory-review-planner/blob/main/SECURITY.md): security policy
+- [CODEOWNERS](https://github.com/SynomosAI/regulatory-review-planner/blob/main/CODEOWNERS): content owners
