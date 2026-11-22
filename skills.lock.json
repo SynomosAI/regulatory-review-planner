@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256(sorted relpath + NUL + file sha256, per line)",
+  "history": [
+    {
+      "root_digest": "0169471922cfe6c5b740fba10f81fef3a32ec372ce3002543fa2fdecb2811e47",
+      "sequence": 1
+    }
+  ],
+  "root_digest": "0169471922cfe6c5b740fba10f81fef3a32ec372ce3002543fa2fdecb2811e47",
+  "schema_version": 2,
+  "sequence": 1,
+  "skill_count": 1,
+  "skills": [
+    {
+      "declared_name": "regulatory-review-planner",
+      "digest": "feff9ef24fe9afb01040f5f5a4eb326d318f90d2ea0a15a31202bd2259ba8a42",
+      "file_count": 1,
+      "has_description": true,
+      "path": "."
+    }
+  ],
+  "validated_against": []
+}
